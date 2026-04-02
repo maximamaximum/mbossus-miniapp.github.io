@@ -1,0 +1,39 @@
+/* Design tokens extracted from MBOSS.US Shopify theme (Updated Trade 25.05.2025) */
+:root {
+  /* Colors — scheme-1 (primary/background) */
+  --color-bg: #f4f4f4;
+  --color-text: #2b2c2d;
+  --color-button: #b7aca2;
+  --color-button-label: #262626;
+  --color-secondary-label: #001128;
+  --color-shadow: #001128;
+
+  /* Colors — scheme-2 (cards/surfaces) */
+  --color-surface: #ffffff;
+  --color-surface-text: #262626;
+  --color-surface-button: #797068;
+  --color-surface-button-label: #ffffff;
+  --color-surface-secondary: #797572;
+
+  /* Typography */
+  --font-heading: 'DM Sans', system-ui, sans-serif;
+  --font-body: 'Futura', 'Century Gothic', system-ui, sans-serif;
+  --heading-scale: 1.05;
+  --body-scale: 1.0;
+
+  /* Spacing & layout */
+  --page-width: 1200px;
+  --spacing-grid-h: 12px;
+  --spacing-grid-v: 12px;
+
+  /* Border radius */
+  --radius-button: 6px;
+  --radius-card: 8px;
+  --radius-badge: 40px;
+  --radius-input: 6px;
+  --radius-media: 8px;
+
+  /* Telegram-specific overrides */
+  --tg-safe-area-top: env(safe-area-inset-top, 0px);
+  --tg-safe-area-bottom: env(safe-area-inset-bottom, 0px);
+}

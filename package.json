@@ -1,0 +1,27 @@
+{
+  "name": "mbossus-miniapp",
+  "version": "1.0.0",
+  "description": "MBOSS.US Telegram Mini App - Shopify storefront inside Telegram",
+  "type": "module",
+  "scripts": {
+    "dev": "node node_modules/vite/bin/vite.js",
+    "build": "node node_modules/vite/bin/vite.js build",
+    "preview": "node node_modules/vite/bin/vite.js preview",
+    "predeploy": "node node_modules/vite/bin/vite.js build",
+    "deploy": "gh-pages -d dist"
+  },
+  "dependencies": {
+    "@shopify/storefront-api-client": "^1.0.10",
+    "@twa-dev/sdk": "^7.10.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "gh-pages": "^6.3.0",
+    "vite": "^8.0.3"
+  }
+}
