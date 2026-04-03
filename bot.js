@@ -8,7 +8,7 @@ if (!token) throw new Error('TELEGRAM_BOT_TOKEN is missing in .env')
 const bot = new Telegraf(token)
 
 const MINI_APP_URL      = 'https://t.me/MBOSSUSbot/mbossus'
-const MINI_APP_CART_URL = 'https://maximamaximum.github.io/mbossus-miniapp.github.io/'
+const MINI_APP_CART_URL = 'https://mbossus-miniapp-github-io.pages.dev'
 const SHOPIFY_CART_URL  = 'https://www.mboss.us/cart'
 const TRACK_URL     = 'https://www.mboss.us/pages/track-ticket'
 const ORDERS_URL    = 'https://account.mboss.us/orders'
