@@ -9,6 +9,8 @@ import './styles/global.css'
 if (window.Telegram?.WebApp) {
   window.Telegram.WebApp.ready()
   window.Telegram.WebApp.expand()
+  // Always open at Home — reset any cached route from previous session
+  window.location.hash = '#/'
 }
 
 ReactDOM.createRoot(document.getElementById('root')).render(

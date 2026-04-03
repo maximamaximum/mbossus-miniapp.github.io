@@ -15,6 +15,7 @@ export default function App() {
   const location = useLocation()
   const navigate = useNavigate()
 
+
   return (
     <CartProvider>
       <div className="app">

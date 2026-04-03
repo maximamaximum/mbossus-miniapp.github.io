@@ -17,14 +17,23 @@ export default function Home() {
 
   return (
     <div>
-      {/* Header */}
-      <div style={{ textAlign: 'center', padding: '20px 0 24px' }}>
-        <h1 style={{ fontFamily: 'var(--font-heading)', fontSize: 26, fontWeight: 700, letterSpacing: '-0.02em' }}>
-          MBOSS.US
-        </h1>
-        <p style={{ fontSize: 13, color: 'var(--color-secondary-label)', marginTop: 4 }}>
-          Premium Streetwear
+      {/* Hero */}
+      <div style={{ textAlign: 'center', marginBottom: 8 }}>
+        <div style={{ width: '100%', overflow: 'hidden', borderRadius: 12 }}>
+          <img
+            src="https://cdn.shopify.com/s/files/1/0587/8084/4216/files/IMG_0083_450x_d469f1a9-8d93-4ab4-adf1-88311746e373.png?v=1775121651"
+            alt="MBOSS.US Hero"
+            style={{ width: '100%', display: 'block', objectFit: 'cover' }}
+          />
+        </div>
+        <p style={{ fontSize: 12, color: 'var(--color-secondary-label)', fontStyle: 'italic', margin: '6px 0 12px' }}>
+          The unmistakable texture of authenticity.
         </p>
+        <img
+          src="https://cdn.shopify.com/s/files/1/0587/8084/4216/files/MBOSS.US_Logo-removebg-preview.png?v=1774778736"
+          alt="MBOSS.US Logo"
+          style={{ width: 100, display: 'inline-block', marginBottom: 16 }}
+        />
       </div>
 
       {/* Collections */}

@@ -3,6 +3,38 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { getProduct, formatPrice } from '../lib/shopify.js'
 import { useCart } from '../context/CartContext.jsx'
 
+const PRODUCT_INFO = [
+  { label: 'Cost-Per-Wear Calculator', url: 'https://www.mboss.us/pages/cost-per-wear-calculator' },
+  { label: 'Size Chart', url: 'https://www.mboss.us/pages/body-sizes-for-dresses' },
+  { label: 'Conversion Chart', url: 'https://www.mboss.us/pages/conversation-chart' },
+  { label: 'Certifications', url: 'https://www.mboss.us/pages/certifications' },
+  { label: 'Delivery Time & Costs', url: 'https://www.mboss.us/pages/delivery-time-costs' },
+]
+
+function openLink(url) {
+  const tg = window.Telegram?.WebApp
+  if (tg?.openLink) tg.openLink(url)
+  else window.open(url, '_blank')
+}
+
+function AccordionRow({ label, url }) {
+  return (
+    <button
+      onClick={() => openLink(url)}
+      style={{
+        width: '100%', display: 'flex', justifyContent: 'space-between',
+        alignItems: 'center', padding: '13px 0', background: 'none',
+        border: 'none', borderBottom: '1px solid rgba(0,0,0,0.08)',
+        fontSize: 14, fontWeight: 500, cursor: 'pointer',
+        color: 'var(--color-text)', textAlign: 'left',
+      }}
+    >
+      {label}
+      <span style={{ color: 'var(--color-secondary-label)', fontSize: 16 }}>›</span>
+    </button>
+  )
+}
+
 export default function Product() {
   const { handle } = useParams()
   const navigate = useNavigate()
@@ -155,10 +187,17 @@ export default function Product() {
       {/* Description */}
       {product.descriptionHtml && (
         <div
-          style={{ fontSize: 14, lineHeight: 1.6, color: 'rgba(0,0,0,0.7)' }}
+          style={{ fontSize: 14, lineHeight: 1.6, color: 'rgba(0,0,0,0.7)', marginBottom: 24 }}
           dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
         />
       )}
+
+      {/* Product Info */}
+      <div style={{ borderTop: '1px solid rgba(0,0,0,0.08)' }}>
+        {PRODUCT_INFO.map(item => (
+          <AccordionRow key={item.label} label={item.label} url={item.url} />
+        ))}
+      </div>
     </div>
   )
 }
