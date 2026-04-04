@@ -37,8 +37,8 @@ export async function getFeaturedProducts(first = 20) {
     .filter(p => parseFloat(p.priceRange.minVariantPrice.amount) > 0)
 }
 
-// Fetch collections
-export async function getCollections(first = 10) {
+// Fetch collections that have at least one product
+export async function getCollections(first = 20) {
   const query = `
     query Collections($first: Int!) {
       collections(first: $first) {
@@ -48,6 +48,9 @@ export async function getCollections(first = 10) {
             title
             handle
             image { url altText }
+            products(first: 1) {
+              edges { node { id } }
+            }
           }
         }
       }
@@ -55,7 +58,9 @@ export async function getCollections(first = 10) {
   `
   const { data, errors } = await shopifyClient.request(query, { variables: { first } })
   if (errors) throw new Error(errors.message)
-  return data.collections.edges.map(e => e.node)
+  return data.collections.edges
+    .map(e => e.node)
+    .filter(col => col.products.edges.length > 0)
 }
 
 // Fetch single product by handle
